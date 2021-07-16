@@ -1,7 +1,52 @@
 
+*/base styles*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 1px solid redfirebrick; 
+}
 
 body {
     position: relative;
+    font-family: 'Karla', sans-serif;
+}
+
+.name  {
+    font-weight: bolder;
+    color: #212529;
+}
+h1 {
+    text-transform: uppercase;
+    margin-top: 40px;
+    margin-left: 2rem;
+    color: #6c757d;
+}
+p {
+    color: #6c757d;
+}
+.grid-container {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(3, max-content);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas: "main";
+}
+.card {
+    width:70%;
+    height: 70%;
+    margin: auto;
+    margin-top: 0px;
+    padding: 1em 1.5em 1em;
+    border-radius: 3rem;
+    border: 1px solid gray;
+    box-shadow: 0 1px 0 0 rgba(0,0,0,.1);
+}
+.avatar {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
 }
 
 .overlay {
