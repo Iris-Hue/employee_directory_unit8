@@ -28,7 +28,7 @@ employees.forEach((employee, index) => {
     let email = employee.email;
     let city = employee.location.city;
     let picture = employee.picture;
-})
+
 
 //template literals make this so much cleaner
 employeeHTML += `
@@ -44,7 +44,7 @@ employeeHTML += `
 });
 
 gridContainer.innerHTML = employeeHTML;
-}
+
 
 function displayModal(index) {
 
@@ -61,7 +61,7 @@ function displayModal(index) {
     <p class="address">${city}</p>
     <hr />
     <p>${phone}</p>
-    <p class="address">${street} ${state} ${postcode}</p>
+    <p class="address">${street.number} ${street.name}, ${state} ${postcode}</p>
     <p> Birthday: ${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</p>
     </div>
     `;
@@ -74,7 +74,7 @@ gridContainer.addEventListener('click', e => {
     if (e.target !== gridContainer) {
         //select the card element based on its proximity to actual element clicked
         const card = e.target.closest(".card");
-        const index = card.getAttribure('data-index');
+        const index = card.getAttribute('data-index');
 displayModal(index);
     
     }

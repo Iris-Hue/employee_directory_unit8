@@ -1,5 +1,5 @@
 
-*/base styles*/
+/*base styles*/
 
 * {
     margin: 0;
@@ -9,7 +9,7 @@
 
 body {
     position: relative;
-    max-width: 1024px;
+    min-width: 1024px;
     margin: auto;
     background-color: #F7F4F3;
     font-family: 'Karla', sans-serif;
@@ -26,22 +26,24 @@ h1 {
     color: #6c757d;
 }
 h2 {
-    text-emphasis: bolder;
+    font-weight: bold;
 }
 p {
     color: #6c757d;
 }
 .grid-container {
     display: grid;
-    gap: 15px;
+    gap: 25px;
     grid-template-columns: repeat(3, max-content);
     grid-template-rows: repeat(4, 1fr);
     grid-template-areas: "main";
+    justify-content: center;
 }
 .card {
     display: flex;
     flex-basis: auto;
     padding: 7px;
+    align-items: center;
     border-radius: 1rem;
     z-index: 10;
     border: 1px solid #6c757d;
