@@ -29,7 +29,24 @@ employees.forEach((employee, index) => {
     let city = employee.location.city;
     let picture = employee.picture;
 
+const search = document.querySelector('#search');
+const boxTexts = document.querySelectorAll('grid-container img p');
+const handleSearch = event => {
 
+}
+const searchTerm = event.target.value.toLowerCase();
+boxTexts.forEach(boxText => {
+    const text = boxText.textContent.toLowerCase();
+    const box = boxText.parentElement;
+
+    if(text.includes(searchTerm)) {
+        box.style.display = "block";
+    } else {
+        box.style.display = "none";
+    }
+});
+
+search.addEventListener('keyup', handleSearch);
 //template literals make this so much cleaner
 employeeHTML += `
 <div class="card" data-index="${index}" >
@@ -49,7 +66,7 @@ gridContainer.innerHTML = employeeHTML;
 function displayModal(index) {
 
     //use object destructuring make our template literal cleaner
-    let { name, dob, phone, email, location: { city, street, state, postcode}, picture } = employees[index];
+    let {name, dob, phone, email, location: {city, street, state, postcode}, picture} = employees[index];
 
     let date = new Date(dob.date);
     
@@ -79,11 +96,12 @@ displayModal(index);
     
     }
 });
+
 modalClose.addEventListener('click', () => {
     overlay.classList.add("hidden");
     
 });
-
+  
 
 
 
