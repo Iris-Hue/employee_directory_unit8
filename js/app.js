@@ -2,7 +2,7 @@
 
 //global variables
 let employees = [];
-const urlAPI = `https://randomuser.me/api/?results=12&inc=name, picture, email, location, phone, dob &oninfo &nat=US `
+const urlAPI = `https://randomuser.me/api/?results=12&inc=name, picture, email, location, phone, dob &noinfo &nat=US `
 const gridContainer = document.querySelector(".grid-container");
 const overlay = document.querySelector(".overlay");
 const modalContainer = document.querySelector(".modal-content");
@@ -28,6 +28,9 @@ employees.forEach((employee, index) => {
     let email = employee.email;
     let city = employee.location.city;
     let picture = employee.picture;
+
+    
+    ///////////////search function////////////////////
 
 const search = document.querySelector('#search');
 const boxTexts = document.querySelectorAll('grid-container img p');
@@ -91,7 +94,7 @@ gridContainer.addEventListener('click', e => {
     if (e.target !== gridContainer) {
         //select the card element based on its proximity to actual element clicked
         const card = e.target.closest(".card");
-        const index = card.getAttribute('data-index');
+        index = parseInt(card.getAttribute("data-index"));
 displayModal(index);
     
     }
