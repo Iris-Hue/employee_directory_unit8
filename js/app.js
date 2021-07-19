@@ -17,7 +17,7 @@ fetch(urlAPI)
 
 function displayEmployees(employeeData) {
     employees = employeeData;
-}
+
 
 //store the employee HTML as we create it
 let employeeHTML = '';
@@ -29,31 +29,10 @@ employees.forEach((employee, index) => {
     let city = employee.location.city;
     let picture = employee.picture;
 
-    
-    ///////////////search function////////////////////
-
-const search = document.querySelector('#search');
-const boxTexts = document.querySelectorAll('grid-container img p');
-const handleSearch = event => {
-
-}
-const searchTerm = event.target.value.toLowerCase();
-boxTexts.forEach(boxText => {
-    const text = boxText.textContent.toLowerCase();
-    const box = boxText.parentElement;
-
-    if(text.includes(searchTerm)) {
-        box.style.display = "block";
-    } else {
-        box.style.display = "none";
-    }
-});
-
-search.addEventListener('keyup', handleSearch);
-//template literals make this so much cleaner
+    //template literals make this so much cleaner
 employeeHTML += `
-<div class="card" data-index="${index}" >
-<img class="avatar" src="${picture.large}" />
+<div class="card" data-index="${index}">
+<img class="avatar" src="${picture.large}"/>
 <div class="text-container">
 <h2 class="name">${name.first} ${name.last}</h2>
 <p class="email">${email}</p>
@@ -64,6 +43,26 @@ employeeHTML += `
 });
 
 gridContainer.innerHTML = employeeHTML;
+    ///////////////search function////////////////////
+
+const search = document.querySelector('#search');
+const boxTexts = document.querySelectorAll('.grid-container .card .name');
+const handleSearch = event => {
+
+const searchTerm = event.target.value.toLowerCase();
+boxTexts.forEach(boxText => {
+    const text = boxText.textContent.toLowerCase();
+    const box = boxText.parentElement.parentElement;
+
+    if(text.includes(searchTerm)) {
+        box.style.display = "block";
+    } else {
+        box.style.display = "none";
+    }
+});
+}
+search.addEventListener('keyup', handleSearch);
+}
 
 
 function displayModal(index) {

@@ -19,18 +19,22 @@ body {
     font-weight: bolder;
     color: #212529;
 }
+
 h1 {
     text-transform: uppercase;
     margin-top: 40px;
     margin-left: 1rem;
     color: #6c757d;
 }
+
 h2 {
     font-weight: bold;
 }
+
 p {
     color: #6c757d;
 }
+
 .grid-container {
     display: grid;
     gap: 25px;
@@ -61,19 +65,19 @@ p {
     
 }
 
+/*//////////////////////////////////////
+////start of overlay window///////////
+///////////////////////////////*/
 
-
-
-/*
 .overlay {
     position: absolute;
+    z-index: 99;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     background: rgba(100, 100, 100, 0.4);
 }
-/*
 .modal {
     width: 500px;
     max-width: 80%;
@@ -87,27 +91,25 @@ p {
     border: 1px solid #778;
     border-radius: 5px;
 
-}*/
-/*.modal-context .avatar {
+}
+.modal-context .avatar {
     padding: 13px;
     border-radius: 50%;
 }
-*/
-/*
+
 .modal-close {
     position: absolute;
     right: 15px;
     top: 5px;
-    
     cursor: pointer;
 }
-/*.modal-context {
+
+.modal-context {
     justify-items: center;
     align-items: center;
-}*/
+}
 
-/*
 .hidden {
     display: none;
 }
-*/
+/*/////the end///////////*/
