@@ -60,7 +60,7 @@ p {
 
 .grid-container {
     display: grid;
-   /* max-width: 1024px;*/
+    max-width: 1024px;
     gap: 25px;
     margin: 0 auto;
     grid-template-columns: repeat(3, max-content);
@@ -70,7 +70,6 @@ p {
 }
 .card {
     display: flex;
-    /*width: 330px;*/
     padding: 5px;
     align-items: center;
     border-radius: .5rem;
@@ -101,8 +100,7 @@ p {
 ///////////////////////////////*/
 
 .overlay {
-    position: absolute;
-    /*height: 100%;*/
+    position: fixed;
     z-index: 99;
     top: 0;
     left: 0;
